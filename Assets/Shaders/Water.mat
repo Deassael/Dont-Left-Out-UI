@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CausticTexture:
-        m_Texture: {fileID: 2800000, guid: 410140d27e5134d4c9564a2895864fad, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1407c836ca1f30b4a9c1d69264e279b4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -108,15 +108,15 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
-    - _CausticCutout: 0.12
-    - _CausticSpeed: 0.01
-    - _CaustingTiling: 1.93
+    - _CausticCutout: 0.05
+    - _CausticSpeed: 0.02
+    - _CaustingTiling: 2.24
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
     - _Depth: 15.13
-    - _DepthFalloff: 4.55
+    - _DepthFalloff: 7.43
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -124,7 +124,7 @@ Material:
     - _EnvironmentReflections: 1
     - _FoamAmount: 1.22
     - _FoamCutout: 0.07
-    - _FoamDepth: 2.11
+    - _FoamDepth: 1.32
     - _FoamFalloff: 0.77
     - _FoamShoreWidth: 0.32
     - _FoamTiling: 0.47
@@ -143,13 +143,13 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _WaveIntensity: 0.05
+    - _WaveIntensity: 0.07
     - _WaveSpeed: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _CausticColor: {r: 1, g: 1, b: 1, a: 0}
+    - _CausticColor: {r: 0.6650944, g: 0.9343765, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
