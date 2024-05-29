@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -11,7 +10,7 @@ public class CameraController : MonoBehaviour
    private Vector3 _targetPosition = new Vector3(0, 46, 0);
     private MoveCamController _MovementController;
  
-   [Tooltip("Entre mayor sea este valor, menor será la velocidad de la animación")]
+   [Tooltip("Entre mayor sea este valor, menor ser la velocidad de la animaciï¿½n")]
    [SerializeField, Min(1)] private float _transitionDuration = 1;
    
 
@@ -23,10 +22,10 @@ public class CameraController : MonoBehaviour
 
     public void SetCameraTopDownView()
    {
-        StartCoroutine(ElevateCameratoTopDownView());
+        StartCoroutine(ElevateCameraToTopDownView());
    }
 
-    private IEnumerator ElevateCameratoTopDownView()
+    private IEnumerator ElevateCameraToTopDownView()
     {
         float elapsedTime = 0f;
         Quaternion startRotation = transform.rotation;
@@ -43,12 +42,9 @@ public class CameraController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(_targetRotation, 0, 0);
         transform.position = _targetPosition;
-
         
-
-        _camera.orthographicSize = 28;
-        _camera.farClipPlane = 50;
-        _camera.nearClipPlane = 20;
+        _camera.farClipPlane = 100;
+        _camera.nearClipPlane = 1;
     }
 
    public void SetCameraHomeScreenView()

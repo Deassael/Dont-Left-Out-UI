@@ -5,6 +5,8 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] MenuVisibility[] menus;
+
+    public bool IsMenuOpen { private set; get; }
     
     public static MenuManager Instance;
 
@@ -15,6 +17,7 @@ public class MenuManager : MonoBehaviour
 
     public void OpenMenuName(string menuName)
     {
+        IsMenuOpen = true;
         for (int i = 0; i < menus.Length; i++)
         {
             if (menus[i].menuName == menuName)
@@ -30,6 +33,7 @@ public class MenuManager : MonoBehaviour
     
     public void CloseMenuName(string menuName)
     {
+        IsMenuOpen = false;
         for (int i = 0; i < menus.Length; i++)
         {
             if (menus[i].menuName == menuName)
@@ -41,6 +45,7 @@ public class MenuManager : MonoBehaviour
     
     public void CloseAllMenus()
     {
+        IsMenuOpen = false;
         foreach (var menu in menus)
         {
             menu.SetMenuNoVisible();
@@ -49,6 +54,7 @@ public class MenuManager : MonoBehaviour
     
     public void OpenMenu(MenuVisibility menu)
     {
+        IsMenuOpen = true;
         for (int i = 0; i < menus.Length; i++)
         {
             if (menus[i].IsOpen)
@@ -61,6 +67,7 @@ public class MenuManager : MonoBehaviour
     
     void CloseMenu(MenuVisibility menu)
     {
+        IsMenuOpen = false;
         menu.SetMenuNoVisible();
     }
 }

@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     private Camera _camera;
     private CameraController _cameraController;
-    private bool _isAlreadyInMainMenu;
+    public bool IsAlreadyInMainMenu { private set; get; }
+
+    public static GameManager Instance;
     
     [SerializeField] private GameObject playerBoatMenu;
 
@@ -16,20 +18,20 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         _camera = FindObjectOfType<Camera>();
         _cameraController = _camera.GetComponent<CameraController>();
-        
+        Instance = this;
     }
 
     private void Start()
     {
-        _isAlreadyInMainMenu = false;
+        IsAlreadyInMainMenu = false;
     }
 
     public override void OnJoinedLobby()
     {
-        if (!_isAlreadyInMainMenu)
+        if (!IsAlreadyInMainMenu)
         {
             StartGameMenu();
-            _isAlreadyInMainMenu = true;
+            IsAlreadyInMainMenu = true;
         }
     }
 

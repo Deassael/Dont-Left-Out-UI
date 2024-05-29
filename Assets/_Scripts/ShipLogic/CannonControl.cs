@@ -12,8 +12,6 @@ public class CannonControl : MonoBehaviour
     //Input System
     private PlayerControls _playerCanonControls;
     
-    //Instance
-    
     void Awake()
     {
         _camera = FindObjectOfType<Camera>();
@@ -28,9 +26,11 @@ public class CannonControl : MonoBehaviour
     private Vector3 ObtainMouseWorldPosition()
     {
         Vector3 mousePosition = _playerCanonControls.Player.Aiming.ReadValue<Vector2>();
-        Vector3 mouseWorldPosition = _camera.ScreenToWorldPoint(mousePosition);
-        mouseWorldPosition.y = transform.position.y;
-        return mouseWorldPosition;
+        Ray ray = _camera.ScreenPointToRay(mousePosition);
+        Debug.DrawRay(ray.origin, ray.direction * 46, Color.red);
+        Vector3 lookAtPoint = ray.GetPoint(46);
+        lookAtPoint.y = transform.position.y;
+        return lookAtPoint;
     }
 
     public void EnableCanonControls()
