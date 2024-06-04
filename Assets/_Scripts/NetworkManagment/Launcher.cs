@@ -186,7 +186,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void ChangeNickName()
     {
-        if (string.IsNullOrEmpty(nickNameInput.text))
+        if (!string.IsNullOrEmpty(nickNameInput.text))
         {
             PhotonNetwork.NickName = nickNameInput.text;
         }
